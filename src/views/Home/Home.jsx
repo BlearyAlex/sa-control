@@ -1,10 +1,3 @@
-// icons
-import { BsFillTrashFill } from 'react-icons/bs';
-import { FaEdit } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteAuditoria } from '../../features/auditorias/auditoriaSlice';
-
 const Home = () => {
   return (
     <>
