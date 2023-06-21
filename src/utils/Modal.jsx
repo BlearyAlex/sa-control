@@ -8,7 +8,7 @@ export const Modal = ({ children, boton }) => {
   return (
     <div
       id="modal-bg"
-      onClick={() => onHandleModal(false)}
+      // onClick={() => onHandleModal(false)}
       className="absolute top-0 left-0 w-screen h-screen bg-zinc-700/50 flex flex-col justify-center items-center"
     >
       <div className="bg-white p-4 m-4 rounded-lg w-10/12 max-w-screen-md shadow-2xl relative">

@@ -25,7 +25,7 @@ const QuintoPaso = () => {
 
       <h1 className="text-xl font-semibold text-center">Orden de Auditoria</h1>
 
-      <Formulario initialValues={initialValues}>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Input label="No. de Oficio:" name="numeroOficio" type="number" />
         <Input label="Fecha:" name="fecha" type="date" />
       </Formulario>

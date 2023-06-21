@@ -3,6 +3,16 @@ import Input from '../../../components/Input';
 import { Formulario } from '../../../utils/Formulario';
 
 const SextoPaso = () => {
+  const initialValues = {
+    fecha: '',
+    fechaVencimiento: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <label htmlFor="" className="text-red-400 font-semibold">
@@ -13,7 +23,7 @@ const SextoPaso = () => {
         Acta Administrativa del Cierre de la Auditoria
       </h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="Fecha:" name="fecha" type="date" />
           <Input

@@ -4,6 +4,21 @@ import Select from '../../../components/Select';
 import { Formulario } from '../../../utils/Formulario';
 
 const SegundoPaso = () => {
+  const initialValues = {
+    solicitudInformacion: '',
+    numero: '',
+    fecha: '',
+    archivos: '',
+    autorizacionInformacion: '',
+    numero2: '',
+    fecha2: '',
+    archivos2: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <label htmlFor="" className="text-red-400 font-semibold">
@@ -12,7 +27,7 @@ const SegundoPaso = () => {
 
       <h1 className="font-bold text-center text-xl">Transparencia</h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Select
           label="Solicitud de reserva de la información de la auditoria:"
           name="solicitudInformacion"

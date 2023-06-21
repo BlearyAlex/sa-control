@@ -3,6 +3,16 @@ import Input from '../../../components/Input';
 import { Formulario } from '../../../utils/Formulario';
 
 const PrimerPaso = () => {
+  const initialValues = {
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <label htmlFor="" className="text-red-400 font-semibold">
@@ -13,7 +23,7 @@ const PrimerPaso = () => {
         Oficio de entrega de información de auditoria emitido por la SFP
       </h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="No. de Oficio:" type="number" name="numeroOficio" />
           <Input label="Fecha:" type="date" name="fecha" />

@@ -4,6 +4,16 @@ import Select from '../../../components/Select';
 import { Formulario } from '../../../utils/Formulario';
 
 const QuintoPaso = () => {
+  const initialValues = {
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <label htmlFor="" className="text-red-400 font-semibold">
@@ -14,7 +24,7 @@ const QuintoPaso = () => {
         auditoria emitido por la SFP a la Dependencia o Entidad ejecutora del
         recurso
       </h1>
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="No. de Oficio:" type="number" name="numeroOficio" />
           <Input label="Fecha:" type="date" name="fecha" />

@@ -3,6 +3,14 @@ import Input from '../../../components/Input';
 import { Formulario } from '../../../utils/Formulario';
 
 const SegundoPaso = () => {
+  const initialValues = {
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <label htmlFor="" className="text-red-400 font-semibold">
@@ -13,7 +21,7 @@ const SegundoPaso = () => {
         Oficio de entrega de información de auditoria emitido por la SFP
       </h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Input label="Subir Archivos:" type="file" name="archivos" />
       </Formulario>
     </>

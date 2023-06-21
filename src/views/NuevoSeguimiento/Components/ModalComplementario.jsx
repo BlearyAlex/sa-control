@@ -5,11 +5,22 @@ import { Formulario } from '../../../utils/Formulario';
 import { Modal } from '../../../utils/Modal';
 
 const ModalComplementario = () => {
+  const initialValues = {
+    oficios: '',
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <Modal boton="Añadir Oficio">
       <h1 className="text-2xl font-semibold text-center">Crear Oficio</h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Select label="Oficios:" name="oficios">
           <option value="">--Seleccionar--</option>
           <option value="">

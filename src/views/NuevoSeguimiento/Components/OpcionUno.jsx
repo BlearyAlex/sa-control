@@ -4,13 +4,26 @@ import Select from '../../../components/Select';
 import { Formulario } from '../../../utils/Formulario';
 
 const OpcionUno = () => {
+  const initialValues = {
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+    numeroOficio2: '',
+    fecha2: '',
+    archivos2: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <h2 className="font-semibold text-green-400">
         Oficio de Solicitud de Prórroga
       </h2>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="No. de Oficio:" type="number" name="numeroOficio" />
           <Input label="Fecha:" type="date" name="fecha" />

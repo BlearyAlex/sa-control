@@ -17,9 +17,14 @@ const CuartoPaso = () => {
         </label>
       </div>
 
-      <h1 className="font-bold text-center text-xl">
-        Oficio de Representación y/o designación de enlace de auditoria emitido
-        por la Dependencia o Entidad fiscalizadora
+      <h1 className="text-xl font-bold relative text-center">
+        <span className="z-10 relative">
+          {' '}
+          Oficio de Representación y/o designación de enlace de auditoria
+          emitido por la Dependencia o Entidad fiscalizadora
+        </span>
+        <span className="absolute left-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
+        <span className="absolute right-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
       </h1>
 
       <div className="mt-4">

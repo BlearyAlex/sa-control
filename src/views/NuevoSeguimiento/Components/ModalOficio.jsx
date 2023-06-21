@@ -5,11 +5,21 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 import { Modal } from '../../../utils/Modal';
 
 const ModalOficio = () => {
+  const initialValues = {
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <Modal boton="Añadir Oficio">
       <h1 className="text-2xl font-semibold text-center">Crear Oficio</h1>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-4">
           <Input label="No. de Oficio:" name="numeroOficio" type="number" />
           <Input label="Fecha:" name="fecha" type="date" />

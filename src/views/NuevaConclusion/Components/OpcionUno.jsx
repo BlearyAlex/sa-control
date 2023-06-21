@@ -3,6 +3,16 @@ import Input from '../../../components/Input';
 import { Formulario } from '../../../utils/Formulario';
 
 export const OpcionUno = () => {
+  const initialValues = {
+    numeroOficio: '',
+    fecha: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <h2 className="font-semibold">
@@ -11,7 +21,7 @@ export const OpcionUno = () => {
         administrativas emitido por la SFP
       </h2>
 
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="No. de Oficio:" type="number" name="numeroOficio" />
           <Input label="Fecha:" type="date" name="fecha" />

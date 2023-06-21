@@ -22,9 +22,14 @@ const TercerPaso = () => {
       </div>
 
       <Formulario initialValues={initialValues}>
-        <h1 className="font-bold text-xl text-center">
-          Oficio de notificación y citación para el inicio de Auditoria emitido
-          por la SFP a la Dependencia o Entidad ejecutora del recurso
+        <h1 className="text-xl font-bold relative text-center">
+          <span className="z-10 relative">
+            {' '}
+            Oficio de notificación y citación para el inicio de Auditoria
+            emitido por la SFP a la Dependencia o Entidad ejecutora del recurso
+          </span>
+          <span className="absolute left-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
+          <span className="absolute right-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
         </h1>
 
         <Input label="No. de Oficio:" name="numeroOficio" type="number" />

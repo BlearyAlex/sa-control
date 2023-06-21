@@ -3,20 +3,26 @@ import Select from '../../../components/Select';
 import Input from '../../../components/Input';
 import TextArea from '../../../components/TextArea';
 import { Formulario } from '../../../utils/Formulario';
-import { AiFillPlusCircle } from 'react-icons/ai';
 import { Modal } from '../../../utils/Modal';
 
-const ModalObservacion = ({ cerrarModalBgClick }) => {
-  function cerrarModalBgClick(e) {
-    console.log(e.target);
-    if (e.target.id === 'modal-bg') {
-      cerrarModal();
-    }
-  }
+const ModalObservacion = () => {
+  const initialValues = {
+    numeroOficio: '',
+    descripcion: '',
+    montoObservado: '',
+    cuantificado: '',
+    mediaCorrectiva: '',
+    mediaPreventiva: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
 
   return (
     <Modal boton="Añadir Observacion">
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div>
           <Input
             label="No. de Observación:"

@@ -6,9 +6,23 @@ import { Formulario } from '../../../utils/Formulario';
 import { Modal } from '../../../utils/Modal';
 
 const ModalObservacion = () => {
+  const initialValues = {
+    numeroOficio: '',
+    descripcion: '',
+    montoObservado: '',
+    cuantificado: '',
+    mediaCorrectiva: '',
+    mediaPreventiva: '',
+    archivos: '',
+  };
+
+  const enviar = (values) => {
+    console.log(values);
+  };
+
   return (
     <Modal boton="Añadir Observación">
-      <Formulario>
+      <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div>
           <Input
             label="No. de Observación:"
