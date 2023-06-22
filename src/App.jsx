@@ -5,8 +5,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Login from './views/Auth/Login';
 
-const LazyLogin = React.lazy(() => import('./views/Auth/Login'));
-
 const LazyHome = React.lazy(() => import('./views/Home/Home'));
 
 const LazyEjecucion = React.lazy(() => import('./views/Ejecucion/Ejecucion'));

@@ -9,8 +9,9 @@ const PrimerPaso = () => {
     programaTrabajo: '',
     montoAutorizado: '',
     tipoAuditoria: '',
-    importe: '',
     alcance: '',
+    importe: '',
+    porcentaje: '',
   };
 
   const enviar = (values) => {
@@ -49,7 +50,7 @@ const PrimerPaso = () => {
           </Select>
 
           <Input label="Importe:" name="importe" type="number" />
-          <Input label="Porcentaje:" name="importe" type="number" />
+          <Input label="Porcentaje:" name="porcentaje" type="number" />
         </div>
       </Formulario>
     </>
