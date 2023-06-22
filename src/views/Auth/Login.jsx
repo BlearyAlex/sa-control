@@ -22,11 +22,11 @@ const Login = () => {
   return (
     <>
       <div className="bg-zinc-100 h-screen flex justify-center items-center">
-        <div className="flex shadow-lg">
-          <div className=" max-w-sm bg-white p-4">
+        <div className="flex shadow-lg bg-white rounded-2xl p-5">
+          <div className=" max-w-sm  ">
             <img src="/img/LOGOZAC.png" alt="Logo Gobierno" />
           </div>
-          <div className="bg-white h-96 pl-10 space-y-3 w-[400] flex flex-col justify-center">
+          <div className="h-96 pl-10 space-y-3 w-[400] flex flex-col justify-center">
             <div>
               <p className="font-semibold text-2x1 tracking-wide flex justify-center items-center">
                 {' '}

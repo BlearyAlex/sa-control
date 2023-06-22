@@ -11,6 +11,7 @@ function useModal() {
 
   return {
     modal,
+
     onHandleModal,
   };
 }
