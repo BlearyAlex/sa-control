@@ -4,7 +4,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 // Componentes
 import Layout from './layout/Layout';
 import Login from './views/Auth/Login';
-import { ProtectedRoute } from './components/ProtectedRoute';
+import { ProtectedRoute } from './components/utils/ProtectedRoute';
 import { useLocalStorage } from 'react-use';
 
 const LazyHome = React.lazy(() => import('./views/Home/Home'));
@@ -28,27 +28,27 @@ const LazyConclusion = React.lazy(() =>
 const LazyAuditoria = React.lazy(() => import('./views/Auditoria/Auditoria'));
 
 const LazyNuevaAuditoria = React.lazy(() =>
-  import('./views/Nueva Auditoria/NuevaAuditoria')
+  import('./views/Auditoria/NuevaAuditoria')
 );
 
 const LazyNuevaPlaneacion = React.lazy(() =>
-  import('./views/NuevaPlaneacion/NuevaPlaneacion')
+  import('./views/Planeacion/NuevaPlaneacion')
 );
 
 const LazyNuevaEjecucion = React.lazy(() =>
-  import('./views/NuevaEjecucion/NuevaEjecucion')
+  import('./views/Ejecucion/NuevaEjecucion')
 );
 
 const LazyNuevoSeguimiento = React.lazy(() =>
-  import('./views/NuevoSeguimiento/NuevoSeguimiento')
+  import('./views/Seguimiento/NuevoSeguimiento')
 );
 
 const LazyNuevoInforme = React.lazy(() =>
-  import('./views/NuevoInforme/NuevoInforme')
+  import('./views/Informe/NuevoInforme')
 );
 
 const LazyNuevaConclusion = React.lazy(() =>
-  import('./views/NuevaConclusion/NuevaConclusion')
+  import('./views/Conclusion/NuevaConclusion')
 );
 
 function App() {

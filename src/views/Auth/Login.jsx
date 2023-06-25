@@ -1,8 +1,8 @@
 import React from 'react';
 import { BsFillKeyFill } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
-import Input from '../../components/Input';
-import { Formulario } from '../../utils';
+import { Input } from '../../components/utils/Input';
+import { Formulario } from '../../components/utils/Formulario';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
