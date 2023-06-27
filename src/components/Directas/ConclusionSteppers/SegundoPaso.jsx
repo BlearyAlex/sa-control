@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Select, Formulario } from '../utils';
+import { Input, Select, Formulario } from '../../utils';
 
 export const SegundoPaso = () => {
   const initialValues = {

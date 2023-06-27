@@ -1,10 +1,10 @@
 import React from 'react';
-import { Input, Formulario } from '../utils';
+import { Input, Formulario } from '../../utils';
 
-export const QuintoPaso = () => {
+export const SextoPaso = () => {
   const initialValues = {
-    numeroOficio: '',
     fecha: '',
+    fechaVencimiento: '',
     archivos: '',
   };
 
@@ -19,17 +19,19 @@ export const QuintoPaso = () => {
       </label>
 
       <h1 className="font-bold text-center text-xl">
-        Oficio de citación para notificación del estatus fianl de las
-        observaciones emitido por la SFP a la Dependencia o Entidad ejecutora
-        del recurso
+        Acta Administrativa del Cierre de la Auditoria
       </h1>
 
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
-          <Input label="No. de Oficio:" type="number" name="numeroOficio" />
-          <Input label="Fecha:" type="date" name="fecha" />
+          <Input label="Fecha:" name="fecha" type="date" />
+          <Input
+            label="Plazo de vencimiento para la solventación de las observaciones:"
+            name="fechaVencimiento"
+            type="date"
+          />
         </div>
-        <Input label="Subir Archivos:" type="file" name="archivos" />
+        <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>
   );

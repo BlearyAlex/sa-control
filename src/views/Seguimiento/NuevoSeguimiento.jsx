@@ -9,7 +9,7 @@ import {
   QuintoPaso,
   SextoPaso,
   Final,
-} from '../../components/SeguimientoSteppers';
+} from '../../components/Directas/SeguimientoSteppers';
 
 function NuevoSeguimiento() {
   const [currentStep, setCurrentStep] = useState(1);

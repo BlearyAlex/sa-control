@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import useModal from '../../hooks/useModal';
-import { ModalObservacion } from '../../views/Seguimiento/Components';
+import useModal from '../../../hooks/useModal';
+import { ModalObservacion } from '../../../views/Seguimiento/Components';
 
 import {
   flexRender,
@@ -10,7 +10,7 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from '@tanstack/react-table';
-import { defaultDataObservaciones } from '../../utils/DataObservaciones';
+import { defaultDataObservaciones } from '../../../utils/DataObservaciones';
 import classNames from 'classnames';
 import { rankItem } from '@tanstack/match-sorter-utils';
 // -----------------Iconos--------------------------

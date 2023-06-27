@@ -9,7 +9,7 @@ import {
   QuintoPaso,
   SextoPaso,
   Final,
-} from '../../components/EjecucionSteppers';
+} from '../../components/Directas/EjecucionSteppers';
 
 function NuevaEjecucion() {
   const [currentStep, setCurrentStep] = useState(1);

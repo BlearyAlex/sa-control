@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ModalComplementario } from '../../views/Ejecucion/Components';
-import useModal from '../../hooks/useModal';
+import { ModalOficio } from '../../../views/Ejecucion/Components';
+import useModal from '../../../hooks/useModal';
 
 import {
   flexRender,
@@ -10,11 +10,11 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from '@tanstack/react-table';
-import { defaultDataObservaciones } from '../../utils/DataObservaciones';
+import { defaultDataObservaciones } from '../../../utils/DataObservaciones';
 import classNames from 'classnames';
 import { rankItem } from '@tanstack/match-sorter-utils';
 
-// ---------------Iconos------------------
+// -------------Iconos-----------------
 import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
@@ -60,7 +60,7 @@ const DebouncedInput = ({ value: keyWord, onChange, ...props }) => {
   );
 };
 
-export const TercerPaso = () => {
+export const SegundoPaso = () => {
   const [data, setData] = useState(defaultDataObservaciones);
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState([]);
@@ -69,21 +69,18 @@ export const TercerPaso = () => {
   const columns = [
     {
       accessorKey: 'NoObservacion',
-      header: () => <span>Tipo de Oficio</span>,
-      cell: (info) => <span className="font-bold">{info.getValue()}</span>,
-    },
-    {
-      accessorKey: 'DescripcionObservacion',
       header: () => <span>No. de Oficio</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
-      accessorKey: 'MontoObservado',
+      accessorKey: 'DescripcionObservacion',
       header: () => <span>Fecha</span>,
+      cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
-      accessorKey: 'MedidaPreventiva',
+      accessorKey: 'NoObservacion',
       header: () => <span>Archivo</span>,
+      cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
       accessorKey: 'actions',
@@ -145,9 +142,7 @@ export const TercerPaso = () => {
   return (
     <div className="px-6 py-4">
       <div className="flex-1">
-        <h1 className="text-3xl">
-          Oficios complementarios emitidos por la SFP
-        </h1>
+        <h1 className="text-3xl">Oficios de Entrega</h1>
         <div>
           <p>Listado de Oficios en General</p>
         </div>
@@ -177,7 +172,9 @@ export const TercerPaso = () => {
           />
         </div>
       </div>
-      {modal === true && <ModalComplementario />}
+
+      {modal === true && <ModalOficio />}
+
       <div className="overflow-auto">
         <table className="table-auto w-full min-w-[560px]">
           <thead>

@@ -5,7 +5,7 @@ import {
   PrimerPaso,
   SegundoPaso,
   Final,
-} from '../../components/ConclusionSteppers';
+} from '../../components/Directas/ConclusionSteppers';
 
 function NuevaConclusion() {
   const [currentStep, setCurrentStep] = useState(1);

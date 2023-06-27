@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OpcionUno } from '../../views/Ejecucion/Components';
+import { OpcionUno, OpcionDos } from '../../../views/Conclusion/Components';
 
 export const PrimerPaso = () => {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
@@ -16,7 +16,9 @@ export const PrimerPaso = () => {
       </div>
       <div className="">
         <div>
-          <h1 className="font-semibold">¿Existe solicitud de prórroga?</h1>
+          <h1 className="font-semibold text-2xl">
+            Observaciones sin solventar
+          </h1>
           <select
             name=""
             id=""
@@ -30,6 +32,7 @@ export const PrimerPaso = () => {
           </select>
         </div>
         {opcionSeleccionada === 'Si' && <OpcionUno />}
+        {opcionSeleccionada === 'No' && <OpcionDos />}
       </div>
     </>
   );

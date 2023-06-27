@@ -5,7 +5,7 @@ import {
   PrimerPaso,
   SegundoPaso,
   Final,
-} from '../../components/InformeSteppers';
+} from '../../components/Directas/InformeSteppers';
 
 function NuevoInforme() {
   const [currentStep, setCurrentStep] = useState(1);

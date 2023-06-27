@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ModalOficio } from '../../views/Ejecucion/Components';
-import useModal from '../../hooks/useModal';
-
+import useModal from '../../../hooks/useModal';
+import { ModalOficio } from '../../../views/Seguimiento/Components';
 import {
   flexRender,
   getCoreRowModel,
@@ -10,11 +9,9 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from '@tanstack/react-table';
-import { defaultDataObservaciones } from '../../utils/DataObservaciones';
+import { defaultDataObservaciones } from '../../../utils/DataObservaciones';
 import classNames from 'classnames';
 import { rankItem } from '@tanstack/match-sorter-utils';
-
-// -------------Iconos-----------------
 import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
@@ -28,7 +25,6 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
-
 // Funcions--------------------------------------------------------------------------------
 const fuzzyFilter = (row, columnId, value, addMeta) => {
   const itemRank = rankItem(row.getValue(columnId), value);
@@ -172,9 +168,7 @@ export const SegundoPaso = () => {
           />
         </div>
       </div>
-
       {modal === true && <ModalOficio />}
-
       <div className="overflow-auto">
         <table className="table-auto w-full min-w-[560px]">
           <thead>

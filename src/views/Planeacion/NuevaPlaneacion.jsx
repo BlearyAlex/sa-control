@@ -9,7 +9,7 @@ import {
   QuintoPaso,
   SextoPaso,
   Final,
-} from '../../components/PlaneacionSteppers';
+} from '../../components/Directas/PlaneacionSteppers';
 
 function NuevaPlaneacion() {
   const [currentStep, setCurrentStep] = useState(1);

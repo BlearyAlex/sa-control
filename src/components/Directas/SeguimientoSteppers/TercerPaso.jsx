@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ModalObservacion } from '../../views/Ejecucion/Components';
-import useModal from '../../hooks/useModal';
+import { ModalComplementario } from '../../../views/Seguimiento/Components';
+import useModal from '../../../hooks/useModal';
 import {
   flexRender,
   getCoreRowModel,
@@ -9,11 +9,9 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from '@tanstack/react-table';
-import { defaultDataObservaciones } from '../../utils/DataObservaciones';
+import { defaultDataObservaciones } from '../../../utils/DataObservaciones';
 import classNames from 'classnames';
 import { rankItem } from '@tanstack/match-sorter-utils';
-
-// --------------------Iconos-------------------
 import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
@@ -59,54 +57,30 @@ const DebouncedInput = ({ value: keyWord, onChange, ...props }) => {
   );
 };
 
-export const CuartoPaso = () => {
+export const TercerPaso = () => {
   const [data, setData] = useState(defaultDataObservaciones);
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState([]);
   const { modal, onHandleModal } = useModal();
 
-  //console.log(globalFilter);
-
   const columns = [
     {
       accessorKey: 'NoObservacion',
-      header: () => <span>No. de Observación</span>,
+      header: () => <span>Tipo de Oficio</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
       accessorKey: 'DescripcionObservacion',
-      header: () => <span>Descripcion</span>,
+      header: () => <span>No. de Oficio</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
       accessorKey: 'MontoObservado',
-      header: () => <span>Monto Observado</span>,
+      header: () => <span>Fecha</span>,
     },
     {
       accessorKey: 'MedidaPreventiva',
-      header: () => <span>Medida Preventiva</span>,
-    },
-    {
-      accessorKey: 'MedidaCorrectiva',
-      header: () => <span>Medida Correctiva</span>,
-    },
-    {
-      accessorKey: 'SinCuantificar',
-      header: () => <span>Cuantificado</span>,
-      cell: (info) => {
-        return (
-          <span
-            className={classNames({
-              'text-white px-2 rounded-full font-semibold': true,
-              'bg-red-500': 'No' === info.getValue(),
-              'bg-green-500': 'Si' === info.getValue(),
-            })}
-          >
-            {info.getValue()}
-          </span>
-        );
-      },
-      enableSorting: true,
+      header: () => <span>Archivo</span>,
     },
     {
       accessorKey: 'actions',
@@ -168,9 +142,11 @@ export const CuartoPaso = () => {
   return (
     <div className="px-6 py-4">
       <div className="flex-1">
-        <h1 className="text-3xl">Observaciones</h1>
+        <h1 className="text-3xl">
+          Oficios complementarios emitidos por la SFP
+        </h1>
         <div>
-          <p>Listado de Observaciones en General</p>
+          <p>Listado de Oficios en General</p>
         </div>
         <div>
           <label htmlFor="" className="text-red-400 font-semibold">
@@ -186,9 +162,7 @@ export const CuartoPaso = () => {
           "
             >
               <AiFillPlusCircle className="text-white mr-2 text-lg" />
-              <button className="text-white font-semibold">
-                Crear Observación
-              </button>
+              <button className="text-white font-semibold">Crear Oficio</button>
             </div>
           </Link>
           <DebouncedInput
@@ -200,9 +174,7 @@ export const CuartoPaso = () => {
           />
         </div>
       </div>
-
-      {modal === true && <ModalObservacion />}
-
+      {modal === true && <ModalComplementario />}
       <div className="overflow-auto">
         <table className="table-auto w-full min-w-[560px]">
           <thead>

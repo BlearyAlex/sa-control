@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OpcionUno, OpcionDos } from '../../views/Planeacion/Components';
+import { OpcionUno, OpcionDos } from '../../../views/Planeacion/Components';
 
 export const CuartoPaso = () => {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');

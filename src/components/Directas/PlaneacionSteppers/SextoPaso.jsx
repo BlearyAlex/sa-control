@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Formulario } from '../utils';
+import { Input, Formulario } from '../../utils';
 
 export const SextoPaso = () => {
   const initialValues = {
