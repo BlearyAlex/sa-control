@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Formulario } from '../../../components/utils';
+import { Input, Formulario } from '../../../../components/utils';
 
 export const OpcionUno = () => {
   const initialValues = {
@@ -13,7 +13,7 @@ export const OpcionUno = () => {
   return (
     <>
       <Formulario initialValues={initialValues}>
-        <h2 className="font-semibold text-center">
+        <h2 className="font-semibold text-center pt-2 border-t-2 mt-4 text-xl">
           Oficio de Solicitud de Prórroga
         </h2>
 
@@ -23,7 +23,7 @@ export const OpcionUno = () => {
         </div>
         <Input label="Subir Archivos:" name="archivos" type="file" />
 
-        <h2 className="font-semibold text-center">
+        <h2 className="font-semibold text-center pt-2 border-t-2 mt-4 text-xl">
           Oficio de Autorización de Prórroga
         </h2>
 

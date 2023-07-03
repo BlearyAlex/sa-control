@@ -18,7 +18,7 @@ export const PrimerPaso = () => {
         No. de Auditoria:
       </label>
 
-      <h1 className="font-bold text-center text-xl">
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
         Oficio de entrega de información de auditoria emitido por la SFP
       </h1>
 

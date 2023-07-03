@@ -17,7 +17,7 @@ export const QuintoPaso = () => {
       <label htmlFor="" className="text-red-400 font-semibold">
         No. de Auditoria:
       </label>{' '}
-      <h1 className="font-bold text-center text-xl">
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
         Oficio de citación para notificación de obersvaciones y cierre de
         auditoria emitido por la SFP a la Dependencia o Entidad ejecutora del
         recurso

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ModalObservacion } from '../../../views/Ejecucion/Components';
+import { ModalObservacion } from '../../../views/Ejecucion/Components/Directas/';
 import useModal from '../../../hooks/useModal';
 import {
   flexRender,

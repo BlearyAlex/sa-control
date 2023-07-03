@@ -26,10 +26,8 @@ export const SegundoPaso = () => {
       </div>
 
       <Formulario initialValues={initialValues}>
-        <h1 className="text-2xl font-bold relative text-center">
-          <span className="z-10 relative">Cronograma de Actividades</span>
-          <span className="absolute left-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
-          <span className="absolute right-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
+        <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+          Cronograma de Actividades
         </h1>
 
         <h1 className="font-bold text-green-500">Tiempo Estimado</h1>
@@ -66,10 +64,8 @@ export const SegundoPaso = () => {
 
         {/* -------------------------------------------------------------- */}
 
-        <h1 className="text-2xl font-bold relative text-center">
-          <span className="z-10 relative">Cronograma de Seguimiento</span>
-          <span className="absolute left-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
-          <span className="absolute right-0 top-1/2 h-[1px] bg-gray-300 w-full"></span>
+        <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-10">
+          Cronograma de Seguimiento
         </h1>
 
         <h1 className="font-bold text-green-500">Tiempo Estimado</h1>

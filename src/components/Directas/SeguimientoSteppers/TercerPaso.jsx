@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ModalComplementario } from '../../../views/Seguimiento/Components';
+import { ModalComplementario } from '../../../views/Seguimiento/Components/Directas';
 import useModal from '../../../hooks/useModal';
 import {
   flexRender,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Formulario, Modal } from '../../../components/utils';
+import { Input, Modal, Formulario } from '../../../../components/utils';
 
 export const ModalOficio = () => {
   const initialValues = {
@@ -14,6 +14,8 @@ export const ModalOficio = () => {
 
   return (
     <Modal boton="Añadir Oficio">
+      <h1 className="text-2xl font-semibold text-center">Crear Oficio</h1>
+
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-4">
           <Input label="No. de Oficio:" name="numeroOficio" type="number" />

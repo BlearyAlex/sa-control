@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useModal from '../../../hooks/useModal';
-import { ModalOficio } from '../../../views/Seguimiento/Components';
+import { ModalOficio } from '../../../views/Seguimiento/Components/Directas';
 import {
   flexRender,
   getCoreRowModel,

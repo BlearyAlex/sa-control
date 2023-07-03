@@ -1,7 +1,7 @@
 import React from 'react';
-import { Input, Formulario } from '../../../components/utils';
+import { Input, Formulario } from '../../../../components/utils';
 
-export const OpcionUno = () => {
+export const OpcionDos = () => {
   const initialValues = {
     numeroOficio: '',
     fecha: '',
@@ -15,11 +15,9 @@ export const OpcionUno = () => {
   return (
     <>
       <h2 className="font-semibold">
-        Oficio de traslado de expediente al área de investigación competente
-        para inicio o procedimiento de probables responsabilidades
-        administrativas emitido por la SFP
+        Oficio de notificación de la conclusión de la auditoría a la dependencia
+        o entidad ejecutora emitido por la SFPZ.
       </h2>
-
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <div className="flex space-x-2">
           <Input label="No. de Oficio:" type="number" name="numeroOficio" />

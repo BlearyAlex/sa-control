@@ -5,7 +5,7 @@ import {
   TextArea,
   Formulario,
   Modal,
-} from '../../../components/utils';
+} from '../../../../components/utils';
 
 export const ModalObservacion = () => {
   const initialValues = {

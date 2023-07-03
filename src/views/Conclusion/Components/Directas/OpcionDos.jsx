@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Formulario } from '../../../components/utils';
+import { Input, Formulario } from '../../../../components/utils';
 
 export const OpcionDos = () => {
   const initialValues = {
@@ -14,7 +14,7 @@ export const OpcionDos = () => {
 
   return (
     <>
-      <h2 className="font-semibold">
+      <h2 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
         Oficio de notificacion de la conclusión de la auditoria a la dependencia
         o entidad ejecutora emitido por la SFP
       </h2>

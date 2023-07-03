@@ -5,9 +5,9 @@ import {
   TextArea,
   Formulario,
   Modal,
-} from '../../../components/utils';
+} from '../../../../components/utils';
 
-export const ModalObservacion = () => {
+export const ModalResultados = () => {
   const initialValues = {
     numeroOficio: '',
     descripcion: '',
@@ -23,16 +23,15 @@ export const ModalObservacion = () => {
   };
 
   return (
-    <Modal boton="Añadir Observacion">
+    <Modal boton="Añadir Resultado">
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
-        <div>
-          <Input
-            label="No. de Observación:"
-            type="number"
-            name="numeroOficio"
-          />
-        </div>
-        <TextArea label="Descripcion:" name="descripcion" />
+        <Select label="Dependencia o Entidad Observada:" name="cuantificado">
+          <option value="">--Selecionar--</option>
+        </Select>
+
+        <Input label="No. de Resultado:" type="number" name="numeroOficio" />
+
+        <TextArea label="Descripcion del Resultado:" name="descripcion" />
 
         <div className="flex space-x-4">
           <Input label="Monto Observado:" type="number" name="montoObservado" />
@@ -44,9 +43,7 @@ export const ModalObservacion = () => {
           </Select>
         </div>
 
-        <TextArea label="Media Correctiva:" name="mediaCorrectiva" />
-
-        <TextArea label="Media Preventiva:" name="mediaPreventiva" />
+        <TextArea label="Medida Correctiva:" name="medidaCorrectiva" />
 
         <Input label="Subir Archivos:" type="file" name="archivos" />
       </Formulario>

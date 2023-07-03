@@ -17,7 +17,7 @@ export const SextoPaso = () => {
         No. de Auditoria:
       </label>
 
-      <h1 className="text-xl font-semibold text-center">
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
         Acta de Incio de Auditoria
       </h1>
 

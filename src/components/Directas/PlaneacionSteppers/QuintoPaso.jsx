@@ -22,7 +22,9 @@ export const QuintoPaso = () => {
         No. de Auditoria:
       </label>
 
-      <h1 className="text-xl font-semibold text-center">Orden de Auditoria</h1>
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+        Orden de Auditoria
+      </h1>
 
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Input label="No. de Oficio:" name="numeroOficio" type="number" />

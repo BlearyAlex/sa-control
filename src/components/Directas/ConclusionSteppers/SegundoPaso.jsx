@@ -23,7 +23,9 @@ export const SegundoPaso = () => {
         No. de Auditoria:
       </label>
 
-      <h1 className="font-bold text-center text-xl">Transparencia</h1>
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+        Transparencia
+      </h1>
 
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Select

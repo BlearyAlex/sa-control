@@ -1,11 +1,10 @@
 import React from 'react';
-import { Input, Select, Modal, Formulario } from '../../../components/utils';
+import { Input, Select, Formulario, Modal } from '../../../../components/utils';
 
 export const ModalComplementario = () => {
   const initialValues = {
     oficios: '',
     numeroOficio: '',
-    archivos: '',
     fecha: '',
     archivos: '',
   };
@@ -15,8 +14,9 @@ export const ModalComplementario = () => {
   };
 
   return (
-    <Modal>
+    <Modal boton="Añadir Oficio">
       <h1 className="text-2xl font-semibold text-center">Crear Oficio</h1>
+
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
         <Select label="Oficios:" name="oficios">
           <option value="">--Seleccionar--</option>
