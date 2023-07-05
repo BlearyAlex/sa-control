@@ -20,14 +20,17 @@ export const SextoPaso = () => {
         </label>
       </div>
 
-      <Formulario initialValues={initialValues}>
-        <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
-          Oficio de notificación y citación para el Inicio de Auditoria emitido
-          por SFPZ a las Dependencias y Entidades ejecutoras del recurso
-        </h1>
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+        Oficio de notificación y citación para el Inicio de Auditoria emitido
+        por SFPZ a las Dependencias y Entidades ejecutoras del recurso
+      </h1>
 
-        <Input label="No. de Oficio:" name="numeroOficio" type="number" />
-        <Input label="Fecha:" name="fecha" type="date" />
+      <Formulario initialValues={initialValues}>
+        <div className="flex space-x-2">
+          <Input label="No. de Oficio:" name="numeroOficio" type="number" />
+          <Input label="Fecha:" name="fecha" type="date" />
+        </div>
+
         <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>

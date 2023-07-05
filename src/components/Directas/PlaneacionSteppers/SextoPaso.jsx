@@ -5,6 +5,7 @@ export const SextoPaso = () => {
   const initialValues = {
     fecha: '',
     fechaLimite: '',
+    archivos: '',
   };
 
   const enviar = (values) => {
@@ -22,13 +23,16 @@ export const SextoPaso = () => {
       </h1>
 
       <Formulario initialValues={initialValues}>
-        <Input label="Fecha:" name="fecha" type="date" />
+        <div className="flex space-x-2">
+          <Input label="Fecha:" name="fecha" type="date" />
 
-        <Input
-          label="Fecha limite para entrega de la información:"
-          name="fechaLimite"
-          type="date"
-        />
+          <Input
+            label="Fecha limite para entrega de la información:"
+            name="fechaLimite"
+            type="date"
+          />
+        </div>
+        <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>
   );

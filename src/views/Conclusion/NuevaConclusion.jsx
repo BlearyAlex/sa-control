@@ -35,7 +35,7 @@ function NuevaConclusion() {
   return (
     <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl">
       <div className="justify-center text-center mt-5 font-bold text-2xl">
-        <h1>Conclusión</h1>
+        <h1>Conclusión (Directas)</h1>
       </div>
       {/* Stepper */}
       <div className="horizontal container mt-5 ">

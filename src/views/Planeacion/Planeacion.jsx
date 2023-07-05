@@ -19,7 +19,6 @@ import {
   ChevronDoubleRightIcon,
   ChevronRightIcon,
 } from '@heroicons/react/24/solid';
-import { AiFillPlusCircle } from 'react-icons/ai';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
@@ -54,11 +53,10 @@ const DebouncedInput = ({ value: keyWord, onChange, ...props }) => {
   );
 };
 
-const Auditoria = () => {
+const Planeacion = () => {
   const [data, setData] = useState(defaultData);
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState([]);
-  console.log(globalFilter);
 
   const columns = [
     {
@@ -84,21 +82,39 @@ const Auditoria = () => {
       header: () => <span>Dependencia Ejecutora</span>,
     },
     {
-      accessorKey: 'actions',
+      accessorKey: 'TipoAuditoria',
       header: 'Acciones',
       cell: (info) => {
+        const tipoAuditoria = info.getValue('TipoAuditoria');
+        let linkTo = '';
+        console.log(tipoAuditoria);
+
+        // Determinar la URL en función del tipo de auditoría
+        if (tipoAuditoria === 'Directa') {
+          linkTo = '/nueva-planeacion';
+        } else if (tipoAuditoria === 'Conjuntas') {
+          linkTo = '/nueva-planeacion-conjunta';
+        } else if (tipoAuditoria === 'Auditoria C') {
+          linkTo = '/auditoria-c';
+        }
+
         return (
           <div className="space-x-2">
             <button className="text-red-600 text-xl">
-              {' '}
-              <MdDelete />{' '}
+              <MdDelete />
             </button>
-            <Link to={'/nueva-planeacion'}>
-              <button className="text-blue-600 text-xl">
-                {' '}
+
+            {linkTo ? (
+              <Link to={linkTo}>
+                <button className="text-blue-600 text-xl">
+                  <FaEdit />
+                </button>
+              </Link>
+            ) : (
+              <button className="text-gray-600 text-xl" disabled>
                 <FaEdit />
               </button>
-            </Link>
+            )}
           </div>
         );
       },
@@ -282,4 +298,4 @@ const Auditoria = () => {
   );
 };
 
-export default Auditoria;
+export default Planeacion;

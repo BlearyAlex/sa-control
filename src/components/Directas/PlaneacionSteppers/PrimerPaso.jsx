@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input, Select, Formulario } from '../../utils';
+import { AlcanceOpcion } from '../../../views/Planeacion/Components/Directas';
 
 //const { enviar } = usePlaneacion()
 export const PrimerPaso = () => {
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
+
+  const handleSeleccion = (event) => {
+    setOpcionSeleccionada(event.target.value);
+    console.log(handleSeleccion);
+  };
+
   const initialValues = {
     programaTrabajo: '',
     montoAutorizado: '',
@@ -30,25 +38,37 @@ export const PrimerPaso = () => {
           name="programaTrabajo"
           type="file"
         />
-        <Input label="Monto Autorizado:" name="montoAutorizado" type="number" />
-
-        <Select label="Tipo de Auditoria:" name="tipoAuditoria">
-          <option value="">--- seleccione ---</option>
-          <option value="1">Financiera</option>
-          <option value="2">Cumplimiento</option>
-          <option value="3">Desempeño</option>
-        </Select>
 
         <div className="flex space-x-2">
-          <Select label="Alcance:" name="alcance">
+          <Input
+            label="Monto Autorizado:"
+            name="montoAutorizado"
+            type="number"
+          />
+
+          <Select label="Tipo de Auditoria:" name="tipoAuditoria">
+            <option value="">--- seleccione ---</option>
+            <option value="1">Financiera</option>
+            <option value="2">Cumplimiento</option>
+            <option value="3">Desempeño</option>
+          </Select>
+        </div>
+
+        <div className="flex space-x-2">
+          <Select
+            label="Alcance:"
+            name="alcance"
+            value={opcionSeleccionada}
+            onChange={handleSeleccion}
+          >
             <option value="">--- seleccione ---</option>
             <option value="1">Periodo Revisado</option>
             <option value="2">Alcance Financiero</option>
             <option value="3">Alcance Técnico</option>
           </Select>
 
-          <Input label="Importe:" name="importe" type="number" />
-          <Input label="Porcentaje:" name="porcentaje" type="number" />
+          {opcionSeleccionada === '2' && <AlcanceOpcion />}
+          {opcionSeleccionada === '3' && <AlcanceOpcion />}
         </div>
       </Formulario>
     </>

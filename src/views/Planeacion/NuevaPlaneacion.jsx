@@ -55,7 +55,7 @@ function NuevaPlaneacion() {
   return (
     <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl">
       <div className="justify-center text-center mt-5 font-bold text-2xl">
-        <h1>Planeación</h1>
+        <h1>Planeación (Directas)</h1>
       </div>
       {/* Stepper */}
       <div className="horizontal container mt-5 ">

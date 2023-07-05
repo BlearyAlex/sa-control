@@ -22,25 +22,30 @@ export const QuintoPaso = () => {
         </label>
       </div>
 
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+        Oficio de Designación de coordinación de la auditoria por parte del
+        enlace designado por el Gobierno del Estado de Zacatecas
+      </h1>
+
       <Formulario initialValues={initialValues}>
-        <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
-          Oficio de Designación de coordinación de la auditoria por parte del
-          enlace designado por el Gobierno del Estado de Zacatecas
-        </h1>
+        <div className="flex space-x-2">
+          <Input label="No. de Oficio:" type="number" name="numeroOficio" />
 
-        <Input label="No. de Oficio:" type="number" name="numeroOficio" />
+          <Input label="Fecha:" type="date" name="fecha" />
+        </div>
 
-        <Input label="Fecha:" type="date" name="fecha" />
+        <div className="flex space-x-2">
+          <Input
+            label="Nombre del enlace designado:"
+            type="number"
+            name="nombreEnlace"
+          />
 
-        <Input
-          label="Nombre del enlace designado:"
-          type="number"
-          name="nombreEnlace"
-        />
+          <Select label="Cargo del enlace designado" name="cargoEnlace">
+            <option value="">--Seleccionar--</option>
+          </Select>
+        </div>
 
-        <Select label="Cargo del enlace designado" name="cargoEnlace">
-          <option value="">--Seleccionar--</option>
-        </Select>
         <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>

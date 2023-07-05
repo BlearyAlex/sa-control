@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Final() {
   return (
     <div className="container md:mt-10">
@@ -29,11 +31,11 @@ export function Final() {
         <div className="text-lg font-semibold text-gray-500">
           Ejecución Creada.
         </div>
-        <a className="mt-10" href="">
+        <Link to={'/ejecucion'}>
           <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
             Cerrar
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

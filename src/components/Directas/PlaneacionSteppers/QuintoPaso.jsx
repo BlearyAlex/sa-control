@@ -5,6 +5,7 @@ export const QuintoPaso = () => {
   const initialValues = {
     numeroOficio: '',
     fecha: '',
+    archivos: '',
   };
 
   const enviar = (values) => {
@@ -27,8 +28,11 @@ export const QuintoPaso = () => {
       </h1>
 
       <Formulario initialValues={initialValues} fncEnviar={enviar}>
-        <Input label="No. de Oficio:" name="numeroOficio" type="number" />
-        <Input label="Fecha:" name="fecha" type="date" />
+        <div className="flex space-x-2">
+          <Input label="No. de Oficio:" name="numeroOficio" type="number" />
+          <Input label="Fecha:" name="fecha" type="date" />
+        </div>
+        <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>
   );

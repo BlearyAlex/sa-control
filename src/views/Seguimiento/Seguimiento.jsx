@@ -84,21 +84,39 @@ const Seguimiento = () => {
       header: () => <span>Dependencia Ejecutora</span>,
     },
     {
-      accessorKey: 'actions',
+      accessorKey: 'TipoAuditoria',
       header: 'Acciones',
       cell: (info) => {
+        const tipoAuditoria = info.getValue('TipoAuditoria');
+        let linkTo = '';
+        console.log(tipoAuditoria);
+
+        // Determinar la URL en función del tipo de auditoría
+        if (tipoAuditoria === 'Directa') {
+          linkTo = '/nuevo-seguimiento';
+        } else if (tipoAuditoria === 'Conjuntas') {
+          linkTo = '/nuevo-seguimiento-conjunta';
+        } else if (tipoAuditoria === 'Auditoria C') {
+          linkTo = '/auditoria-c';
+        }
+
         return (
           <div className="space-x-2">
             <button className="text-red-600 text-xl">
-              {' '}
-              <MdDelete />{' '}
+              <MdDelete />
             </button>
-            <Link to={'/nuevo-seguimiento'}>
-              <button className="text-blue-600 text-xl">
-                {' '}
+
+            {linkTo ? (
+              <Link to={linkTo}>
+                <button className="text-blue-600 text-xl">
+                  <FaEdit />
+                </button>
+              </Link>
+            ) : (
+              <button className="text-gray-600 text-xl" disabled>
                 <FaEdit />
               </button>
-            </Link>
+            )}
           </div>
         );
       },

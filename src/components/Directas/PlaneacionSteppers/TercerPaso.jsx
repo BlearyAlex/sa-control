@@ -5,6 +5,7 @@ export const TercerPaso = () => {
   const initialValues = {
     numeroOficio: '',
     fecha: '',
+    archivos: '',
   };
 
   const enviar = (values) => {
@@ -24,9 +25,11 @@ export const TercerPaso = () => {
           Oficio de notificación y citación para el inicio de Auditoria emitido
           por la SFP a la Dependencia o Entidad ejecutora del recurso
         </h1>
-
-        <Input label="No. de Oficio:" name="numeroOficio" type="number" />
-        <Input label="Fecha:" name="fecha" type="date" />
+        <div className="flex space-x-2">
+          <Input label="No. de Oficio:" name="numeroOficio" type="number" />
+          <Input label="Fecha:" name="fecha" type="date" />
+        </div>
+        <Input label="Subir Archivos:" name="archivos" type="file" />
       </Formulario>
     </>
   );
