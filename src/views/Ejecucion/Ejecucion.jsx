@@ -96,8 +96,8 @@ const Auditoria = () => {
           linkTo = '/nueva-ejecucion';
         } else if (tipoAuditoria === 'Conjuntas') {
           linkTo = '/nueva-ejecucion-conjunta';
-        } else if (tipoAuditoria === 'Auditoria C') {
-          linkTo = '/auditoria-c';
+        } else if (tipoAuditoria === 'Revisiones') {
+          linkTo = '/nueva-ejecucion-revision';
         }
 
         return (

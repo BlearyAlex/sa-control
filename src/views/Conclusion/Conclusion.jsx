@@ -96,8 +96,8 @@ const Conclusion = () => {
           linkTo = '/nueva-conclusion';
         } else if (tipoAuditoria === 'Conjuntas') {
           linkTo = '/nueva-conclusion-conjunta';
-        } else if (tipoAuditoria === 'Auditoria C') {
-          linkTo = '/auditoria-c';
+        } else if (tipoAuditoria === 'Revisiones') {
+          linkTo = '/nueva-conclusion-revision';
         }
 
         return (

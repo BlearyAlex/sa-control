@@ -25,11 +25,10 @@ export const SegundoPaso = () => {
         </label>
       </div>
 
+      <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
+        Cronograma de Actividades
+      </h1>
       <Formulario initialValues={initialValues}>
-        <h1 className="text-2xl font-bold text-center pt-2 border-t-2 mt-2">
-          Cronograma de Actividades
-        </h1>
-
         <h1 className="font-bold text-green-500">Tiempo Estimado</h1>
 
         <div className="flex space-x-2">

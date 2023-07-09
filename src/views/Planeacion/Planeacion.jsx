@@ -94,8 +94,8 @@ const Planeacion = () => {
           linkTo = '/nueva-planeacion';
         } else if (tipoAuditoria === 'Conjuntas') {
           linkTo = '/nueva-planeacion-conjunta';
-        } else if (tipoAuditoria === 'Auditoria C') {
-          linkTo = '/auditoria-c';
+        } else if (tipoAuditoria === 'Revisiones') {
+          linkTo = '/nueva-planeacion-revision';
         }
 
         return (

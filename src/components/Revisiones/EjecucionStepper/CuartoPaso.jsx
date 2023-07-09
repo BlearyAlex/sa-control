@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { ModalObservacion } from '../../../views/Ejecucion/Components/Revisiones';
+import useModal from '../../../hooks/useModal';
+
 import {
   flexRender,
   getCoreRowModel,
@@ -7,9 +10,11 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from '@tanstack/react-table';
-import { defaultData } from '../../utils/Data';
+import { defaultDataObservaciones } from '../../../utils/DataObservaciones';
 import classNames from 'classnames';
 import { rankItem } from '@tanstack/match-sorter-utils';
+
+// ---------------Iconos------------------
 import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
@@ -23,6 +28,7 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
+
 // Funcions--------------------------------------------------------------------------------
 const fuzzyFilter = (row, columnId, value, addMeta) => {
   const itemRank = rankItem(row.getValue(columnId), value);
@@ -54,69 +60,45 @@ const DebouncedInput = ({ value: keyWord, onChange, ...props }) => {
   );
 };
 
-const Seguimiento = () => {
-  const [data, setData] = useState(defaultData);
+export const CuartoPaso = () => {
+  const [data, setData] = useState(defaultDataObservaciones);
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState([]);
-  console.log(globalFilter);
+  const { modal, onHandleModal } = useModal();
 
   const columns = [
     {
-      accessorKey: 'TipoAuditoria',
-      header: () => <span>Tipo Auditoria</span>,
+      accessorKey: 'NoObservacion',
+      header: () => <span>No. de Observación</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
-      accessorKey: 'NoAuditoria',
-      header: () => <span>No. Auditoria</span>,
+      accessorKey: 'DescripcionObservacion',
+      header: () => <span>Descripcion Observacion</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
     {
-      accessorKey: 'ProgramaAuditado',
-      header: () => <span>Programa Auditado</span>,
+      accessorKey: 'MontoObservado',
+      header: () => <span>Monto Observado</span>,
     },
     {
-      accessorKey: 'EjercicioAuditado',
-      header: () => <span>Ejercicio Auditado</span>,
+      accessorKey: 'Archivo',
+      header: () => <span>Archivo</span>,
     },
     {
-      accessorKey: 'DependenciaEjecutora',
-      header: () => <span>Dependencia Ejecutora</span>,
-    },
-    {
-      accessorKey: 'TipoAuditoria',
+      accessorKey: 'actions',
       header: 'Acciones',
       cell: (info) => {
-        const tipoAuditoria = info.getValue('TipoAuditoria');
-        let linkTo = '';
-        console.log(tipoAuditoria);
-
-        // Determinar la URL en función del tipo de auditoría
-        if (tipoAuditoria === 'Directa') {
-          linkTo = '/nuevo-seguimiento';
-        } else if (tipoAuditoria === 'Conjuntas') {
-          linkTo = '/nuevo-seguimiento-conjunta';
-        } else if (tipoAuditoria === 'Revisiones') {
-          linkTo = '/nuevo-seguimiento-revision';
-        }
-
         return (
           <div className="space-x-2">
             <button className="text-red-600 text-xl">
-              <MdDelete />
+              {' '}
+              <MdDelete />{' '}
             </button>
-
-            {linkTo ? (
-              <Link to={linkTo}>
-                <button className="text-blue-600 text-xl">
-                  <FaEdit />
-                </button>
-              </Link>
-            ) : (
-              <button className="text-gray-600 text-xl" disabled>
-                <FaEdit />
-              </button>
-            )}
+            <button className="text-blue-600 text-xl">
+              {' '}
+              <FaEdit />
+            </button>
           </div>
         );
       },
@@ -163,13 +145,29 @@ const Seguimiento = () => {
   return (
     <div className="px-6 py-4">
       <div className="flex-1">
-        <h1 className="text-3xl">Seguimiento</h1>
+        <h1 className="text-3xl">Observaciones</h1>
         <div>
-          <p>Listado de Auditorias en Seguimiento</p>
+          <p>Listado de Observaciones en General</p>
+        </div>
+        <div>
+          <label htmlFor="" className="text-red-400 font-semibold">
+            No. de Auditoria:
+          </label>
         </div>
       </div>
       <div className="my-2 flex justify-end">
         <div className="relative">
+          <Link onClick={() => onHandleModal(true)}>
+            <div
+              className="bg-green-400 p-2 rounded-lg mb-3 flex items-center justify-center cursor-pointer hover:bg-green-500
+          "
+            >
+              <AiFillPlusCircle className="text-white mr-2 text-lg" />
+              <button className="text-white font-semibold">
+                Crear Observación
+              </button>
+            </div>
+          </Link>
           <DebouncedInput
             type="text"
             value={globalFilter ?? ''}
@@ -179,6 +177,9 @@ const Seguimiento = () => {
           />
         </div>
       </div>
+
+      {modal === true && <ModalObservacion />}
+
       <div className="overflow-auto">
         <table className="table-auto w-full min-w-[560px]">
           <thead>
@@ -299,5 +300,3 @@ const Seguimiento = () => {
     </div>
   );
 };
-
-export default Seguimiento;

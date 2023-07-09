@@ -29,6 +29,10 @@ const LazyNuevaPlaneacionConjunta = React.lazy(() =>
   import('./views/Planeacion/PlaneacionConjuntas')
 );
 
+const LazyNuevaPlaneacionRevision = React.lazy(() =>
+  import('./views/Planeacion/PlaneacionRevisiones')
+);
+
 //! Ejecucion
 const LazyEjecucion = React.lazy(() => import('./views/Ejecucion/Ejecucion'));
 
@@ -38,6 +42,10 @@ const LazyNuevaEjecucion = React.lazy(() =>
 
 const LazyNuevaEjecucionConjunta = React.lazy(() =>
   import('./views/Ejecucion/EjecucionConjuntas')
+);
+
+const LazyNuevaEjecucionRevision = React.lazy(() =>
+  import('./views/Ejecucion/EjecucionRevisiones')
 );
 
 //! Seguimiento
@@ -51,6 +59,10 @@ const LazyNuevoSeguimiento = React.lazy(() =>
 
 const LazyNuevoSeguimientoConjunta = React.lazy(() =>
   import('./views/Seguimiento/SeguimientoConjuntas')
+);
+
+const LazyNuevoSeguimientoRevision = React.lazy(() =>
+  import('./views/Seguimiento/SeguimientoRevisiones')
 );
 
 //! Informe
@@ -75,6 +87,10 @@ const LazyNuevaConclusion = React.lazy(() =>
 
 const LazyNuevaConclusionConjunta = React.lazy(() =>
   import('./views/Conclusion/ConclusionConjuntas')
+);
+
+const LazyNuevaConclusionRevision = React.lazy(() =>
+  import('./views/Conclusion/ConclusionRevision')
 );
 
 function App() {
@@ -146,6 +162,14 @@ function App() {
                 </React.Suspense>
               }
             />
+            <Route
+              path="nueva-planeacion-revision"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyNuevaPlaneacionRevision />
+                </React.Suspense>
+              }
+            />
 
             {/* Ejecucion */}
             <Route
@@ -172,6 +196,14 @@ function App() {
                 </React.Suspense>
               }
             />
+            <Route
+              path="nueva-ejecucion-revision"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyNuevaEjecucionRevision />
+                </React.Suspense>
+              }
+            />
 
             {/* Seguimiento */}
             <Route
@@ -195,6 +227,14 @@ function App() {
               element={
                 <React.Suspense fallback="Cargando...">
                   <LazyNuevoSeguimientoConjunta />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="nuevo-seguimiento-revision"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyNuevoSeguimientoRevision />
                 </React.Suspense>
               }
             />
@@ -247,6 +287,14 @@ function App() {
               element={
                 <React.Suspense fallback="Cargando...">
                   <LazyNuevaConclusionConjunta />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="nueva-conclusion-revision"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyNuevaConclusionRevision />
                 </React.Suspense>
               }
             />
