@@ -5,12 +5,16 @@ export const SegundoPaso = () => {
   const initialValues = {
     fechaInicialActividades: '',
     fechaTerminalActividades: '',
+    archivos: '',
     fechaInicialActividades2: '',
     fechaTerminalActividades2: '',
+    archivosDos: '',
     fechaInicialSeguimiento: '',
     fechaTerminalSeguimiento: '',
+    archivosTres: '',
     fechaInicialSeguimiento2: '',
     fechaTerminalSeguimiento2: '',
+    archivosCuatro: '',
   };
 
   const enviar = (values) => {
@@ -44,6 +48,7 @@ export const SegundoPaso = () => {
             type="date"
           />
         </div>
+        <Input label="Subir Archivos:" name="archivos" type="file" />
 
         <h1 className="font-bold text-green-500 mt-4">Tiempo Real</h1>
 
@@ -60,6 +65,7 @@ export const SegundoPaso = () => {
             type="date"
           />
         </div>
+        <Input label="Subir Archivos:" name="archivosDos" type="file" />
 
         {/* -------------------------------------------------------------- */}
 
@@ -81,6 +87,7 @@ export const SegundoPaso = () => {
             type="date"
           />
         </div>
+        <Input label="Subir Archivos:" name="archivosTres" type="file" />
 
         <h1 className="font-bold text-green-500 mt-2">Tiempo Real</h1>
 
@@ -96,6 +103,7 @@ export const SegundoPaso = () => {
             type="date"
           />
         </div>
+        <Input label="Subir Archivos:" name="archivosCuatro" type="file" />
       </Formulario>
     </>
   );
