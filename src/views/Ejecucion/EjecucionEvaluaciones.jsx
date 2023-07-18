@@ -4,13 +4,25 @@ import { Stepper, StepperControl } from '../../components/utils';
 import {
   PrimerPaso,
   SegundoPaso,
+  TercerPaso,
+  CuartoPaso,
+  QuintoPaso,
+  SextoPaso,
   Final,
-} from '../../components/Directas/ConclusionSteppers';
+} from '../../components/Directas-Evaluaciones/EjecucionSteppers';
 
-function NuevaConclusion() {
+function EjecucionEvaluaciones() {
   const [currentStep, setCurrentStep] = useState(1);
 
-  const steps = ['Primer Paso', 'Segundo Paso', 'Completado'];
+  const steps = [
+    'Primer Paso',
+    'Segundo Paso',
+    'Tercer Paso',
+    'Cuarto Paso',
+    'Quinto Paso',
+    'Sexto Paso',
+    'Completado',
+  ];
 
   const displayStep = (step) => {
     switch (step) {
@@ -19,6 +31,14 @@ function NuevaConclusion() {
       case 2:
         return <SegundoPaso />;
       case 3:
+        return <TercerPaso />;
+      case 4:
+        return <CuartoPaso />;
+      case 5:
+        return <QuintoPaso />;
+      case 6:
+        return <SextoPaso />;
+      case 7:
         return <Final />;
       default:
     }
@@ -35,7 +55,7 @@ function NuevaConclusion() {
   return (
     <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl">
       <div className="justify-center text-center mt-5 font-bold text-2xl">
-        <h1>Conclusión (Directas)</h1>
+        <h1>Ejecución (Evaluaciones)</h1>
       </div>
       {/* Stepper */}
       <div className="horizontal container mt-5 ">
@@ -56,4 +76,4 @@ function NuevaConclusion() {
   );
 }
 
-export default NuevaConclusion;
+export default EjecucionEvaluaciones;

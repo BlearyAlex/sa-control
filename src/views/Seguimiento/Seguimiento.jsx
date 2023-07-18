@@ -98,6 +98,8 @@ const Seguimiento = () => {
           linkTo = '/nuevo-seguimiento-conjunta';
         } else if (tipoAuditoria === 'Revisiones') {
           linkTo = '/nuevo-seguimiento-revision';
+        } else if (tipoAuditoria === 'Evaluaciones') {
+          linkTo = '/nuevo-seguimiento-evaluacion';
         }
 
         return (

@@ -9,9 +9,9 @@ import {
   QuintoPaso,
   SextoPaso,
   Final,
-} from '../../components/Directas/EjecucionSteppers';
+} from '../../components/Directas-Evaluaciones/PlaneacionSteppers';
 
-function NuevaEjecucion() {
+function PlaneacionEvaluaciones() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
@@ -55,7 +55,7 @@ function NuevaEjecucion() {
   return (
     <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl">
       <div className="justify-center text-center mt-5 font-bold text-2xl">
-        <h1>Ejecución (Directas)</h1>
+        <h1>Planeación (Evaluaciones)</h1>
       </div>
       {/* Stepper */}
       <div className="horizontal container mt-5 ">
@@ -76,4 +76,4 @@ function NuevaEjecucion() {
   );
 }
 
-export default NuevaEjecucion;
+export default PlaneacionEvaluaciones;

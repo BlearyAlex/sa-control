@@ -9,9 +9,9 @@ import {
   QuintoPaso,
   SextoPaso,
   Final,
-} from '../../components/Directas/SeguimientoSteppers';
+} from '../../components/Directas-Evaluaciones/SeguimientoSteppers';
 
-function NuevoSeguimiento() {
+function SeguimientoDirectas() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
@@ -76,4 +76,4 @@ function NuevoSeguimiento() {
   );
 }
 
-export default NuevoSeguimiento;
+export default SeguimientoDirectas;

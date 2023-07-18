@@ -96,8 +96,8 @@ const Informe = () => {
           linkTo = '/nuevo-informe';
         } else if (tipoAuditoria === 'Conjuntas') {
           linkTo = '/nuevo-informe-conjunta';
-        } else if (tipoAuditoria === 'Auditoria C') {
-          linkTo = '/auditoria-c';
+        } else if (tipoAuditoria === 'Evaluaciones') {
+          linkTo = '/nuevo-informe-evaluacion';
         }
 
         return (

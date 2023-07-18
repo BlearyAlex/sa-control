@@ -98,8 +98,9 @@ const Auditoria = () => {
           linkTo = '/nueva-ejecucion-conjunta';
         } else if (tipoAuditoria === 'Revisiones') {
           linkTo = '/nueva-ejecucion-revision';
+        } else if (tipoAuditoria === 'Evaluaciones') {
+          linkTo = '/nueva-ejecucion-evaluacion';
         }
-
         return (
           <div className="space-x-2">
             <button className="text-red-600 text-xl">
