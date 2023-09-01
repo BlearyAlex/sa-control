@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { RiAccountCircleFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export function TopBar() {
-  const Menus = [{ title: 'Usuarios' }];
+  const Menu = [
+    { title: 'Usuarios', routes: '/usuarios' },
+    { title: 'Catalogos', routes: '/catalogos' },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
   const list = [
     {
@@ -12,16 +17,19 @@ export function TopBar() {
 
   return (
     <div className="bg-red-800 flex justify-between py-4 items-center shadow-2xl">
-      <div className=" ml-6 flex gap-2">
-        {Menus.map((menu, index) => (
-          <h6
-            className="bg-white rounded-md px-2 font-semibold text-sm"
-            key={index}
-          >
-            Usuarios
-          </h6>
+      <ul className="flex pl-4">
+        {Menu.map((menu, index) => (
+          <Link to={menu.routes} key={index}>
+            <li
+              className="bg-white rounded-md px-2 font-semibold text-sm cursor-pointer hover:scale-110 ease-in-out duration-300 mr-2"
+              key={index}
+            >
+              {menu.title}
+            </li>
+          </Link>
         ))}
-      </div>
+      </ul>
+
       <div className="mr-6 my-2">
         <RiAccountCircleFill
           className="text-2xl text-white cursor-pointer hover:scale-125 ease-in-out duration-300"

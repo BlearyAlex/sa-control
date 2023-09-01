@@ -26,8 +26,9 @@ export const OctavoPaso = () => {
       </h1>
 
       <Formulario initialValues={initialValues}>
+        <Input label="No. de Oficio:" name="numeroOficio" type="number" />
+
         <div className="flex space-x-2">
-          <Input label="No. de Oficio:" name="numeroOficio" type="number" />
           <Input label="Fecha:" name="fecha" type="date" />
           <Input
             label="Fecha limite para la entrega de la información:"

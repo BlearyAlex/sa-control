@@ -113,6 +113,11 @@ const LazyNuevaConclusionEvaluacion = React.lazy(() =>
   import('./views/Conclusion/ConclusionEvaluaciones')
 );
 
+//! Usuarios
+const LazyUsuarios = React.lazy(() => import('./views/Users/Usuarios'));
+
+const LazyNuevoUsuario = React.lazy(() => import('./views/Users/NuevoUsuario'));
+
 function App() {
   const [user, setUser] = useLocalStorage('user');
 
@@ -138,7 +143,23 @@ function App() {
                 </React.Suspense>
               }
             />
-
+            {/* Usuarios */}
+            <Route
+              path="usuarios"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyUsuarios />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="nuevo-usuario"
+              element={
+                <React.Suspense fallback="Cargando...">
+                  <LazyNuevoUsuario />
+                </React.Suspense>
+              }
+            />
             {/* Auditoria */}
             <Route
               path="auditoria"
@@ -156,7 +177,6 @@ function App() {
                 </React.Suspense>
               }
             />
-
             {/* Planeacion */}
             <Route
               path="planeacion"
@@ -198,7 +218,6 @@ function App() {
                 </React.Suspense>
               }
             />
-
             {/* Ejecucion */}
             <Route
               path="ejecucion"
@@ -240,7 +259,6 @@ function App() {
                 </React.Suspense>
               }
             />
-
             {/* Seguimiento */}
             <Route
               path="seguimiento"
@@ -282,7 +300,6 @@ function App() {
                 </React.Suspense>
               }
             />
-
             {/* Informe */}
             <Route
               path="informe"
@@ -316,7 +333,6 @@ function App() {
                 </React.Suspense>
               }
             />
-
             {/* Conclusion */}
             <Route
               path="conclusion"

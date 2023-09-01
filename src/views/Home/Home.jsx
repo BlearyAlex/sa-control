@@ -115,9 +115,6 @@ const Home = () => {
                   Auditoria Conjunta: <span className="font-bold">3</span>{' '}
                 </h6>
                 <h6>
-                  Revisiones: <span className="font-bold">3</span>{' '}
-                </h6>
-                <h6>
                   Evaluaciones: <span className="font-bold">3</span>{' '}
                 </h6>
               </div>

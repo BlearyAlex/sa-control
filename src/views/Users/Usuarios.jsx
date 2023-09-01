@@ -54,7 +54,7 @@ const DebouncedInput = ({ value: keyWord, onChange, ...props }) => {
   );
 };
 
-const Ejecucion = () => {
+const Usuarios = () => {
   const [data, setData] = useState(defaultData);
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState([]);
@@ -63,61 +63,24 @@ const Ejecucion = () => {
   const columns = [
     {
       accessorKey: 'TipoAuditoria',
-      header: () => <span>Tipo Auditoria</span>,
+      header: () => <span>Nombre de Usuario</span>,
       cell: (info) => <span className="font-bold">{info.getValue()}</span>,
     },
+
     {
-      accessorKey: 'NoAuditoria',
-      header: () => <span>No. Auditoria</span>,
-      cell: (info) => <span className="font-bold">{info.getValue()}</span>,
-    },
-    {
-      accessorKey: 'ProgramaAuditado',
-      header: () => <span>Programa Auditado</span>,
-    },
-    {
-      accessorKey: 'EjercicioAuditado',
-      header: () => <span>Ejercicio Auditado</span>,
-    },
-    {
-      accessorKey: 'DependenciaEjecutora',
-      header: () => <span>Dependencia Ejecutora</span>,
-    },
-    {
-      accessorKey: 'TipoAuditoria',
+      accessorKey: 'actions',
       header: 'Acciones',
       cell: (info) => {
-        const tipoAuditoria = info.getValue('TipoAuditoria');
-        let linkTo = '';
-        console.log(tipoAuditoria);
-
-        // Determinar la URL en función del tipo de auditoría
-        if (tipoAuditoria === 'Directa') {
-          linkTo = '/nueva-ejecucion';
-        } else if (tipoAuditoria === 'Conjuntas') {
-          linkTo = '/nueva-ejecucion-conjunta';
-        } else if (tipoAuditoria === 'Revisiones') {
-          linkTo = '/nueva-ejecucion-revision';
-        } else if (tipoAuditoria === 'Evaluaciones') {
-          linkTo = '/nueva-ejecucion-evaluacion';
-        }
         return (
           <div className="space-x-2">
             <button className="text-red-600 text-xl">
-              <MdDelete />
+              {' '}
+              <MdDelete />{' '}
             </button>
-
-            {linkTo ? (
-              <Link to={linkTo}>
-                <button className="text-blue-600 text-xl">
-                  <FaEdit />
-                </button>
-              </Link>
-            ) : (
-              <button className="text-gray-600 text-xl" disabled>
-                <FaEdit />
-              </button>
-            )}
+            <button className="text-blue-600 text-xl">
+              {' '}
+              <FaEdit />
+            </button>
           </div>
         );
       },
@@ -164,20 +127,21 @@ const Ejecucion = () => {
   return (
     <div className="px-6 py-4">
       <div className="flex-1">
-        <h1 className="text-3xl">Ejecución</h1>
-        <div>
-          <p>Listado de Auditorias en Ejecución</p>
-        </div>
+        <h1 className="text-3xl">Usuarios</h1>
       </div>
       <div className="my-2 flex justify-end">
         <div className="relative">
-          <DebouncedInput
-            type="text"
-            value={globalFilter ?? ''}
-            onChange={(value) => setGlobalFilter(String(value))}
-            className="px-6 py-2 text-gray-600 border border-gray-300 rounded outline-red-700"
-            placeholder="Buscar..."
-          />
+          <Link to={'/nuevo-usuario'}>
+            <div
+              className="bg-green-400 p-2 rounded-lg mb-3 flex items-center justify-center cursor-pointer hover:bg-green-500
+          "
+            >
+              <AiFillPlusCircle className="text-white mr-2 text-lg" />
+              <button className="text-white font-semibold">
+                Crear Usuario
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="overflow-auto">
@@ -301,4 +265,4 @@ const Ejecucion = () => {
   );
 };
 
-export default Ejecucion;
+export default Usuarios;
