@@ -1,8 +1,14 @@
-import React from 'react';
-import { SideBar, TopBar } from '../components/utils';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { SideBar, TopBar } from "../components/utils";
+import { Outlet } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 function Layout() {
+  const { user, error } = useAuth({ middleware: "auth" });
+
+  console.log(user);
+  console.log(error);
+
   return (
     <>
       <TopBar />

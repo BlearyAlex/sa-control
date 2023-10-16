@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { handleModal } from '../features/utils/utilsSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { handleModal } from "../features/utils/utilsSlice";
 
 function useModal() {
   const { modal } = useSelector((state) => state.utils);
@@ -11,7 +11,6 @@ function useModal() {
 
   return {
     modal,
-
     onHandleModal,
   };
 }

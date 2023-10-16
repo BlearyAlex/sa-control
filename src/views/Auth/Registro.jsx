@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { BsFillKeyFill } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
+import { AiOutlineUser } from "react-icons/ai";
 import { Input } from "../../components/utils/Input";
 import { Formulario } from "../../components/utils/Formulario";
-import { useAuth } from "../../hooks/useAuth";
+import clienteAxios from "../../config/axios";
 import { Alerta } from "../../components/utils/Alerta";
 
-const Login = () => {
+const Registro = () => {
   const initialValues = {
     name: "",
     email: "",
@@ -15,15 +16,20 @@ const Login = () => {
 
   const [errores, setErrores] = useState([]);
 
-  const { login } = useAuth({
-    middleware: "guest",
-    url: "/",
-  });
-
   const enviar = async (values) => {
     console.log(values);
 
-    login(values, setErrores);
+    try {
+      const respuesta = await clienteAxios.post("/registro", values);
+      console.log(respuesta);
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.errors) {
+        setErrores(Object.values(error.response.data.errors));
+      } else {
+        // Maneja el caso en que no haya errores específicos en la respuesta
+        console.error("Error de respuesta sin errores específicos:", error);
+      }
+    }
   };
 
   return (
@@ -38,8 +44,8 @@ const Login = () => {
           </div>
           <div className="h-96 pl-10 space-y-3 w-[400] flex flex-col justify-center">
             <div>
-              <p className="font-semibold text-2x1 tracking-wide flex justify-center items-center">
-                INICIO DE SESION
+              <p className="font-semibold text-2xl tracking-wide flex justify-center items-center">
+                Registrar Usuario
               </p>
             </div>
 
@@ -51,6 +57,18 @@ const Login = () => {
                 ? errores.map((error, i) => <Alerta key={i}>{error}</Alerta>)
                 : null}
 
+              <div className="mr-5 space-y-0 m-auto">
+                <div className="flex items-center space-x-1">
+                  <AiOutlineUser />
+                  <p className="text-zinc-600 font-semibold ">Nombre:</p>
+                </div>
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre de Usuario"
+                />
+              </div>
+
               <div className="mr-5 space-y-0">
                 <div className="flex items-center space-x-1">
                   <MdAlternateEmail />
@@ -59,7 +77,7 @@ const Login = () => {
                 <Input
                   type="email"
                   name="email"
-                  placeholder="Ingresa tu email"
+                  placeholder="Correo de Usuario"
                 />
               </div>
 
@@ -71,7 +89,7 @@ const Login = () => {
                 <Input
                   type="password"
                   name="password"
-                  placeholder="Ingresa tu contraseña"
+                  placeholder="Contraseña"
                 />
               </div>
 
@@ -80,7 +98,7 @@ const Login = () => {
                   type="submit"
                   className=" text-white font-bold"
                 >
-                  Iniciar Sesión
+                  Registrar
                 </button>
               </div>
             </Formulario>
@@ -91,4 +109,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registro;
